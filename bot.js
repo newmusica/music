@@ -335,7 +335,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== "486605337391136790","475070652727033858") return;
+  if (message.author.id !== "475070652727033858") return;
  
 if (message.content.startsWith(prefix + 'setavatar')) {
   client.user.setAvatar(argresult);
