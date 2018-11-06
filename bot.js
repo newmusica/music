@@ -43,8 +43,8 @@ client.on('message', async msg => { // eslint disable line
         if (!voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'I\'m sorry but you need to be in a voice channel to play music!'
+                name: "❌ خطأ",
+                value: '!يجب تواجدك في روم صوتي'
               }
             ]
           }
@@ -54,8 +54,8 @@ client.on('message', async msg => { // eslint disable line
             return msg.channel.send({embed: {
                 color: 15158332,
                 fields: [{
-                    name: "❌ Error",
-                    value: 'I cannot connect to your voice channel, make sure I have the proper permissions!'
+                    name: "❌ خطأ",
+                    value: '!لا توجد لدي الصلاحيه لدخول هذا الروم الصوتي'
                   }
                 ]
               }
@@ -65,8 +65,8 @@ client.on('message', async msg => { // eslint disable line
             return msg.channel.send({embed: {
                 color: 15158332,
                 fields: [{
-                    name: "❌ Error",
-                    value: 'I cannot speak to your voice channel, make sure I have the proper permissions!'
+                    name: "❌ خطأ",
+                    value: '!لا توجد لدي صلاحيه للتحدث في هذا الروم الصوتي'
                   }
                 ]
               }
@@ -83,7 +83,7 @@ client.on('message', async msg => { // eslint disable line
             return msg.channel.send({embed: {
                 color: 15158332,
                 fields: [{
-                    name: "✅ Added playlist",
+                    name: "✅ تمت اضافته اللي قائمه التشغيل",
                     value: `Playlist: **${playlist.title}** has been added to the queue!`
                   }
                 ]
@@ -99,12 +99,12 @@ client.on('message', async msg => { // eslint disable line
                     msg.channel.send({embed: {
                         color: 15158332,
                         fields: [{
-                            name: "📋 Song selection",
+                            name: "📋 اختيار الاغاني",
                             value: `${videos.map(video2 => `\`${++index}\` **-** ${video2.title}`).join('\n')}`
                           },
                           {
-                              name: "You have 10 seconds!",
-                              value: "Provide a value to select on of the search results ranging from 1-10."
+                              name: "لديك 10 ثواني",
+                              value: "يجب ان تختار موسيقي "
                           }
                         ]
                       }
@@ -121,8 +121,8 @@ client.on('message', async msg => { // eslint disable line
                         return msg.channel.send({embed: {
                             color: 15158332,
                             fields: [{
-                                name: "❌ Error",
-                                value: 'No or invalid value entered, cancelling video selection...'
+                                name: "❌ خطأ",
+                                value: '!لم يتم اختيار اغنيه تم الغاء تحديد الاغنيه'
                               }
                             ]
                           }
@@ -136,7 +136,7 @@ client.on('message', async msg => { // eslint disable line
                         color: 15158332,
                         fields: [{
                             name: "❌ Error",
-                            value: 'I could not obtain any search results.'
+                            value: 'لم اتمكن من العثور علي اغنيه بهذا الاسم'
                           }
                         ]
                       }
@@ -151,8 +151,8 @@ client.on('message', async msg => { // eslint disable line
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'You are not in a voice channel!'
+                name: "❌ خطأ",
+                value: 'انت لست في روم صوتي'
               }
             ]
           }
@@ -160,8 +160,8 @@ client.on('message', async msg => { // eslint disable line
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing that I could skip for you.'
+                name: "❌ خطأ",
+                value: 'لا يوجد اغنيه قيد التشغيل ليتم تخطيها'
               }
             ]
           }
@@ -173,8 +173,8 @@ client.on('message', async msg => { // eslint disable line
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'You are not in a voice channel!'
+                name: "❌ خطأ",
+                value: 'انت لست في روم صوتي'
               }
             ]
           }
@@ -182,8 +182,8 @@ client.on('message', async msg => { // eslint disable line
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing that I could stop for you.'
+                name: "❌ خطأ",
+                value: 'لا توجد اغنيه قيد التشغيل ليتم ايقافها'
               }
             ]
           }
@@ -196,8 +196,8 @@ client.on('message', async msg => { // eslint disable line
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'You are not in a voice channel!'
+                name: "❌ خطأ",
+                value: 'انت لست في روم صوتي'
               }
             ]
           }
@@ -205,8 +205,8 @@ client.on('message', async msg => { // eslint disable line
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing.'
+                name: "❌ خطأ",
+                value: 'لا يوجد شئ قيد التشغيل.'
               }
             ]
           }
@@ -214,8 +214,8 @@ client.on('message', async msg => { // eslint disable line
         if (!args[1]) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "🔊 Volume",
-                value: `The current volume is: **${serverQueue.volume}**`
+                name: "🔊 الصوت",
+                value: ` **${serverQueue.volume}** : درجه الصوت`
               }
             ]
           }
@@ -225,8 +225,8 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "🔊 Volume",
-                value: `I set the volume to: **${args[1]}**`
+                name: "🔊 الصوت",
+                value: ` **${args[1]}** : درجه الصوت اصبحت  `
               }
             ]
           }
@@ -236,8 +236,8 @@ client.on('message', async msg => { // eslint disable line
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing that I could skip for you.'
+                name: "❌ خطأr",
+                value: 'لا توجد اغنيه قيد التشغيل لأتخطاها'
               }
             ]
           }
@@ -245,7 +245,7 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "🎵 Now playing",
+                name: "🎵 قيد التشغيل",
                 value: `**${serverQueue.songs[0].title}**`
               }
             ]
@@ -256,8 +256,8 @@ client.on('message', async msg => { // eslint disable line
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing that I could skip for you.'
+                name: "❌ خطأ",
+                value: 'لا يوجد شئ قيد التشغيل لأتخطاها'
               }
             ]
           }
@@ -265,11 +265,11 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "📋 Song queue",
+                name: "📋 قائمه التشغيل",
                 value: `${serverQueue.songs.map(song => `**- ${song.title}**`).join('\n')}`
               },
               {
-                  name: "🎵 Now playing",
+                  name: "🎵 قيد التشغيل",
                   value: `**${serverQueue.songs[0].title}**`
               }
             ]
@@ -278,7 +278,7 @@ client.on('message', async msg => { // eslint disable line
         } else if(msg.content.startsWith(`${prefix}help`)) {
         console.log(`${msg.author.tag} has been used the ${prefix}help command in ${msg.guild.name}`);
  
-        msg.channel.send('Please check your direct messages :inbox_tray:').then(message =>{message.delete(5000)})
+        msg.channel.send(':inbox_tray:تم ارسال الاوامر في الخاص').then(message =>{message.delete(5000)})
  
         msg.react('✅');
  
@@ -316,8 +316,8 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "⏯️ Pause",
-                value: 'Paused the music for you!'
+                name: "⏯️ ايقاف مؤقت",
+                value: 'تم ايقاف هذه الاغنيه مؤقتا'
               }
             ]
           }
@@ -326,8 +326,8 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing.'
+                name: "❌ خطأ",
+                value: 'لا يوجد شئ قيد التشغيل'
               }
             ]
           }
@@ -341,8 +341,8 @@ client.on('message', async msg => { // eslint disable line
             return msg.channel.send({embed: {
                 color: 15158332,
                 fields: [{
-                    name: "⏯️ Resume",
-                    value: 'Resumed the music for you!'
+                    name: "⏯️ استئناف",
+                    value: 'تم استئناف الاغنيه'
                   }
                 ]
               }
@@ -351,8 +351,8 @@ client.on('message', async msg => { // eslint disable line
         return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
-                name: "❌ Error",
-                value: 'There is nothing playing or something is already playing.'
+                name: "❌ خطأ",
+                value: 'لا يوجد شي قيد التشغيل او هناك اغنيه قيد التشغيل بالفعل'
               }
             ]
           }
@@ -388,13 +388,13 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
                 queueConstruct.connection = connection;
                 play(msg.guild, queueConstruct.songs[0]);
             } catch (error) {
-                console.error(`I could not join the voice channel: ${error}`);
+                console.error(`${error} : لا استطيع الدخول للروم الصوتي`);
                 queue.delete(msg.guild.id);
                 return msg.channel.send({embed: {
                     color: 15158332,
                     fields: [{
-                        name: "❌ Error",
-                        value: `I could not join the voice channel: ${error}`
+                        name: "❌ خطأ",
+                        value: ` ${error} : لا استطيع الدخول اللي الروم الصوتي`
                       }
                     ]
                   }
@@ -406,8 +406,8 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
             else return msg.channel.send({embed: {
                 color: 15158332,
                 fields: [{
-                    name: "✅ Added song",
-                    value: `**${song.title}** has been added to the queue!`
+                    name: "✅ اضافه اغنيه",
+                    value: `**${song.title}** : تمت اضافتها لقائمه التشغيل`
                   }
                 ]
               }
@@ -437,8 +437,8 @@ function play(guild, song) {
     serverQueue.textChannel.send({embed: {
         color: 15158332,
         fields: [{
-            name: "✅ Start playing",
-            value: `Start playing: **${song.title}**`
+            name: "✅ بدء التشغيل",
+            value: ` **${song.title}** : تم تشغيل `
           }
         ]
       }
