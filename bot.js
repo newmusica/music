@@ -342,5 +342,6 @@ if (message.content.startsWith(prefix + 'setname')) {
       message.channel.sendMessage(`Username Changed To **${argresult}**`)
   return message.reply("You Can change the username 2 times per hour");
 }
+	});
 client.login(process.env.BOT_TOKEN);
 
