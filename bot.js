@@ -30,14 +30,14 @@ client.on('reconnecting', () => console.log('I am reconnecting now!'));
  
 client.on('message', async msg => { // eslint disable line
     if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(PREFIX)) return undefined;
+    if (!msg.content.startsWith(prefix)) return undefined;
     const args = msg.content.split(' ');
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(msg.guild.id);
  
-    if (msg.content.startsWith(`${PREFIX}play`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}play command in ${msg.guild.name}`);
+    if (msg.content.startsWith(`${prefix}play`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}play command in ${msg.guild.name}`);
  
         const voiceChannel = msg.member.voiceChannel;
         if (!voiceChannel) return msg.channel.send({embed: {
@@ -146,8 +146,8 @@ client.on('message', async msg => { // eslint disable line
  
             return handleVideo(video, msg, voiceChannel);
         }
-    } else if (msg.content.startsWith(`${PREFIX}skip`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}skip command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}skip`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}skip command in ${msg.guild.name}`);
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
@@ -168,8 +168,8 @@ client.on('message', async msg => { // eslint disable line
         }).then(message =>{message.delete(5000)})
         serverQueue.connection.dispatcher.end();
         return undefined;
-    } else if (msg.content.startsWith(`${PREFIX}stop`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}stop command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}stop`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}stop command in ${msg.guild.name}`);
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
@@ -191,8 +191,8 @@ client.on('message', async msg => { // eslint disable line
         serverQueue.songs = [];
         serverQueue.connection.dispatcher.end('Stop command has been used!');
         return undefined;
-    } else if (msg.content.startsWith(`${PREFIX}volume`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}volume command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}volume`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}volume command in ${msg.guild.name}`);
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
@@ -231,8 +231,8 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         }).then(message =>{message.delete(5000)})
-    } else if (msg.content.startsWith(`${PREFIX}np`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}np command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}np`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}np command in ${msg.guild.name}`);
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
@@ -251,8 +251,8 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         }).then(message =>{message.delete(5000)})
-    } else if (msg.content.startsWith(`${PREFIX}queue`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}queue command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}queue`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}queue command in ${msg.guild.name}`);
         if (!serverQueue) return msg.channel.send({embed: {
             color: 15158332,
             fields: [{
@@ -275,8 +275,8 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         }).then(message =>{message.delete(5000)})
-        } else if(msg.content.startsWith(`${PREFIX}help`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}help command in ${msg.guild.name}`);
+        } else if(msg.content.startsWith(`${prefix}help`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}help command in ${msg.guild.name}`);
  
         msg.channel.send('Please check your direct messages :inbox_tray:').then(message =>{message.delete(5000)})
  
@@ -290,15 +290,15 @@ client.on('message', async msg => { // eslint disable line
             },
             fields: [{
                 name: "Bot's commands:",
-                value: `**${PREFIX}help** - This message!\n\
-**${PREFIX}play** - Play a song from YouTube.\n\
-**${PREFIX}skip** - Skip a song.\n\
-**${PREFIX}stop** - Stops the music.\n\
-**${PREFIX}volume** - Change the volume of the bot.\n\
-**${PREFIX}np** - The song that now playing.\n\
-**${PREFIX}queue** - See the queue of songs.\n\
-**${PREFIX}pause** - Pause the music.\n\
-**${PREFIX}resume** - Resume the music.`
+                value: `**${prefix}help** - This message!\n\
+**${prefix}play** - Play a song from YouTube.\n\
+**${prefix}skip** - Skip a song.\n\
+**${prefix}stop** - Stops the music.\n\
+**${prefix}volume** - Change the volume of the bot.\n\
+**${prefix}np** - The song that now playing.\n\
+**${prefix}queue** - See the queue of songs.\n\
+**${prefix}pause** - Pause the music.\n\
+**${prefix}resume** - Resume the music.`
               }
             ],
             timestamp: new Date(),
@@ -308,8 +308,8 @@ client.on('message', async msg => { // eslint disable line
             }
           }
         });
-    } else if (msg.content.startsWith(`${PREFIX}pause`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}pause command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}pause`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}pause command in ${msg.guild.name}`);
         if (serverQueue && serverQueue.playing) {
             serverQueue.playing = false;
         serverQueue.connection.dispatcher.pause();
@@ -332,8 +332,8 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         }).then(message =>{message.delete(2000)})
-    } else if (msg.content.startsWith(`${PREFIX}resume`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}resume command in ${msg.guild.name}`);
+    } else if (msg.content.startsWith(`${prefix}resume`)) {
+        console.log(`${msg.author.tag} has been used the ${prefix}resume command in ${msg.guild.name}`);
  
         if (serverQueue && !serverQueue.playing) {
             serverQueue.playing =  true;
