@@ -289,22 +289,22 @@ client.on('message', async msg => { // eslint disable line
               icon_url: client.user.avatarURL
             },
             fields: [{
-                name: "Bot's commands:",
-                value: `**${prefix}help** - This message!\n\
-**${prefix}play** - Play a song from YouTube.\n\
-**${prefix}skip** - Skip a song.\n\
-**${prefix}stop** - Stops the music.\n\
-**${prefix}volume** - Change the volume of the bot.\n\
-**${prefix}np** - The song that now playing.\n\
-**${prefix}queue** - See the queue of songs.\n\
-**${prefix}pause** - Pause the music.\n\
-**${prefix}resume** - Resume the music.`
+                name: "اوامر البوت : ",
+                value: `**${prefix}help** - ارسال هذه الرساله!\n\
+**${prefix}play** - تشغيل اغنيه.\n\
+**${prefix}skip** - تخطي اغنيه.\n\
+**${prefix}stop** - ايقاف الاغنيه.\n\
+**${prefix}volume** - تغيير درجه صوت البوت.\n\
+**${prefix}np** - الاغنيه التي قيد التشغيل الان.\n\
+**${prefix}queue** - اظهار قائمه التشغيل .\n\
+**${prefix}pause** - ايقاف الاغنيه مؤقتا.\n\
+**${prefix}resume** - استئناف الاغنيه.`
               }
             ],
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "© Misaka"
+              text: "© تم انشاء البوت بواسطه : محمد بن عبدالله"
             }
           }
         });
